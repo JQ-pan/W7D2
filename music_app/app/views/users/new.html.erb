@@ -1,8 +1,9 @@
 <h1>New User</h1>
 
 <form action="<%= users_url %>" method="POST"> 
-    <label>Username
-        <input type="text" name="user[username]" value="">
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <label>Email
+        <input type="text" name="user[email]" value="">
     </label>
     <br>
 

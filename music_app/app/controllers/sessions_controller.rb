@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-
+    before_action :require_logged_out, only: [:create, :new]
+    before_action :require_logged_in, only: [:destroy]
     def new
         @user = User.new
         render :new
@@ -12,7 +13,7 @@ class SessionsController < ApplicationController
             redirect_to user_url(@user)
         else
             flash[:errors] = @user.errors.full_messages
-            redirect_to new_sessions_url
+            redirect_to new_session_url
         end
     end
 
@@ -21,7 +22,7 @@ class SessionsController < ApplicationController
             logout!
         end
 
-        redirect_to new_sessions_url
+        redirect_to new_session_url
     end
 
 
