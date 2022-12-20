@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+#header {
+    font-family:'Courier New', Courier, monospace;
+    color: red;
+    text-align: center;
+}
+
+.navlink {
+    display: flex;
+    flex-direction: column;
+    align-items: end
+}
+
+.sl {
+    background-color:rgb(156, 180, 180);
+    border-radius: 12px;
+}

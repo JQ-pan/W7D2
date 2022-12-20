@@ -10,6 +10,7 @@
   </head>
   
   <body>
+    <h1 id="header">Music App</h1>
     <% if logged_in? %>
       <h2>Welcome, <%= current_user.email %></h2>
       <form action="<%= session_url %>" method="POST">
@@ -18,8 +19,12 @@
         <input type="submit" value="Logout">
       </form>
     <% else %>
-      <a href="<%= new_user_url %>">Sign Up</a>
-      <a href="<%= new_session_url %>">Login</a>
+    <div class="navlink">
+      <a href="<%= new_user_url %>"><button class="sl" type="button">Sign up!</button></a>
+      <a href="<%= new_session_url %>"><button class="sl" type="button">Log in!</button></a>
+
+      
+    </div>
     <% end %>
     <%= yield %>
       <% if flash[:errors] %>
